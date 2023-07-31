@@ -18,8 +18,12 @@ if __name__ == '__main__':
 
     # for article in articles_list:
     #     link = article.find(‘a’)[‘href’]
-    #     salary = article.find(‘span’, class_=“bloko-header-section-3”)
+    #     if salary = article.find(‘span’, class_=“bloko-header-section-3”):
+    #         salary = article.find(‘span’, class_=“bloko-header-section-3”)
     #     company = article.find(‘a’, class_=‘bloko-link bloko-link_kind-tertiary’).text
     #     city = article.find(‘div’,{‘data-qa’:‘vacancy-serp__vacancy-address’}).text
+    
+    with open('vacancy_list.json', 'w', encoding='utf-8') as f:
+            json.dump(vacancy_list, f, ensure_ascii=False, indent=2)
     print()
 
