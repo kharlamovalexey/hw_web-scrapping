@@ -12,16 +12,18 @@ if __name__ == '__main__':
     html_data = response.text
     soup = bs4.BeautifulSoup(html_data, 'lxml')
     
-    # articles_list = bs.find_all(class_=“vacancy-serp-item__layout”)
+    articles_list = bs.find_all(class_=“vacancy-serp-item__layout”)
 
-    # vacancy_list = []
+    vacancy_list = []
 
-    # for article in articles_list:
-    #     link = article.find(‘a’)[‘href’]
-    #     if salary = article.find(‘span’, class_=“bloko-header-section-3”):
-    #         salary = article.find(‘span’, class_=“bloko-header-section-3”)
-    #     company = article.find(‘a’, class_=‘bloko-link bloko-link_kind-tertiary’).text
-    #     city = article.find(‘div’,{‘data-qa’:‘vacancy-serp__vacancy-address’}).text
+    for article in articles_list:
+        link = article.find(‘a’)[‘href’]
+        if salary = article.find(‘span’, class_=“bloko-header-section-3”):
+            salary = article.find(‘span’, class_=“bloko-header-section-3”)
+        company = article.find(‘a’, class_=‘bloko-link bloko-link_kind-tertiary’).text
+        city = article.find(‘div’,{‘data-qa’:‘vacancy-serp__vacancy-address’}).text
+        
+        vacancy_list.append({'link': link, 'salary': salary, 'company': company, 'city': city})
     
     with open('vacancy_list.json', 'w', encoding='utf-8') as f:
             json.dump(vacancy_list, f, ensure_ascii=False, indent=2)
