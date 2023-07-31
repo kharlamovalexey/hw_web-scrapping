@@ -7,7 +7,7 @@ if __name__ == '__main__':
 
     headers = fake_headers.Headers(browser='firefox', os='win')
     headers_dict = headers.generate()
-    url = 'https://spb.hh.ru/search/vacancy?text=django+flask&area=1&area=2&items_on_page=20'
+    url = 'https://spb.hh.ru/search/vacancy?text=python+django+flask&area=1&area=2&items_on_page=20'
     response = requests.get(url, headers=headers_dict)
     html_data = response.text
     soup = bs4.BeautifulSoup(html_data, 'lxml')
